@@ -17,12 +17,19 @@
 
 plugins {
   id "io.spinnaker.project" version "$spinnakerGradleVersion" apply false
+    id 'org.springframework.boot' version '2.2.13.RELEASE'
   id "nebula.kotlin" version "$kotlinVersion" apply false
   id 'idea'
 }
 
 allprojects {
   apply plugin: "io.spinnaker.project"
+    apply plugin: 'io.spring.dependency-management'
+    dependencyManagement {
+        imports {
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.2.13.RELEASE'
+        }
+    }
 }
 
 subprojects { project ->
