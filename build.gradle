@@ -91,6 +91,10 @@ subprojects { project ->
         api 'com.typesafe.scala-logging:scala-logging_2.12:3.9.2'
         testImplementation 'org.scalatest:scalatest_2.12:3.0.9'
       }
+            implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.2.10.RELEASE'
+            implementation group: 'org.yaml', name: 'snakeyaml', version: '1.26'
+            implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.5.1'
+
       implementation platform("io.spinnaker.orca:orca-bom:$orcaVersion")
       compileOnly "org.projectlombok:lombok"
       annotationProcessor platform("io.spinnaker.orca:orca-bom:$orcaVersion")
